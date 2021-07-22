@@ -5,15 +5,20 @@
 }
 
 body {
+    position: relative;
+
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    max-height: 100vh;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
     background-color: #F2F4F4;
+    margin-top: 10px;
 }
 
 .main {
-    padding: 100px 150px;
+    padding: 20px 150px 0 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,10 +26,9 @@ body {
 }
 
 .head {
-    font-size: 50px;
-    font-weight: 300;
+    font-size: 40px;
+    font-weight: 400;
     color: #2E86C1;
-    margin: 40px;
 }
 
 .excuse-btn {
@@ -44,9 +48,130 @@ body {
 }
 
 .excuse-buffer {
+    position: absolute;
+    top: 15%;
+    right: 28%;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 300px;
+    width: 350px;
     text-align: center;
-    margin: 100px 0;
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 400;
     color: #1B4F72;
+    cursor: pointer;
+}
+
+.man {
+    position: absolute;
+    bottom: 0;
+    left: 40%;
+
+    height: 400px;
+    width: auto;
+    cursor: pointer;
+}
+
+.bubble {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+
+    height: 400px;
+    width: auto;
+    transform: rotateY(180deg);
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .man {
+        left: 30%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .man {
+        left: 20%;
+    }
+}
+
+@media (max-width: 800px) {
+    .main {
+        padding: 20px 20px 0 20px;
+    }
+
+    .bubble {
+        right: 10%;
+    }
+
+    .excuse-buffer {
+        right: 15%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .bubble {
+        height: 350px;
+    }
+
+    .excuse-buffer {
+        right: 15%;
+
+        height: 200px;
+        width: 300px;
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .head {
+        font-size: 30px;
+    }
+
+    .man {
+        left: 10%;
+        bottom: 0;
+
+        height: 350px;
+        width: auto;
+    }
+
+    .bubble {
+        right: 0%;
+
+        height: 350px;
+    }
+
+    .excuse-buffer {
+        right: 10%;
+    }
+}
+
+@media (max-width: 400px) {
+    .head {
+        font-size: 30px;
+        text-align: center;
+    }
+    .man {
+        left: 5%;
+    }
+
+    .bubble {
+        right: 0%;
+        height: 300px;
+    }
+
+    .excuse-buffer {
+        right: 10%;
+        top: 18%;
+
+        width: 250px;
+        font-size: 20px;
+    }
 }

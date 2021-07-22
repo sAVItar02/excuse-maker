@@ -1,5 +1,6 @@
 const $excuseBuffer = document.querySelector('.excuse-buffer');
-const $excuseBtn = document.querySelector('.excuse-btn');
+const $man = document.querySelector('.man');
+const $bubble = document.querySelector('.bubble');
 
 const intro = {
     1: "Sorry I can't come",
@@ -46,12 +47,10 @@ const generateRandom = () => {
 }
 
 const generateExcuse = () => {
-    return `${intro[generateRandom()]} ${mid[generateRandom()]} ${delay[generateRandom()]}`;
+    const excuse = `${intro[generateRandom()]} ${mid[generateRandom()]} ${delay[generateRandom()]}`;
+    $excuseBuffer.innerHTML = excuse;
 } 
 
-
-$excuseBtn.addEventListener('click', function(e) {
-    console.log('clicked');
-    e.preventDefault();
-    $excuseBuffer.innerHTML = generateExcuse();
-})
+$excuseBuffer.addEventListener('click', generateExcuse)
+$man.addEventListener('click', generateExcuse)
+$bubble.addEventListener('click', generateExcuse)
